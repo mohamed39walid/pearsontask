@@ -11,8 +11,12 @@ class UserController extends Controller
 {
     public function insert(Request $request)
     {
-        try {
-            User::insert(
+            $request->validate([
+                'name' => 'required|string|min:0|max:255',
+                'email' => 'required|email|unique:users|max:255',
+                'password' => 'required|string|min:8|max:255',
+            ]);
+            User::create(
                 [
                     "name" => $request->name,
                     "email" => $request->email,
@@ -22,8 +26,5 @@ class UserController extends Controller
                 ]
             );
             return redirect('http://127.0.0.1:8000/');
-        } catch (Exception $e) {
-            return response("error in signing up" . $e->getMessage());
-        }
     }
 }
