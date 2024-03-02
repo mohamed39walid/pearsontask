@@ -23,7 +23,7 @@ class UserController extends Controller
             );
             return redirect('http://127.0.0.1:8000/');
         } catch (Exception $e) {
-            return response("error in storing data" . $e->getMessage());
+            return response("error in signing up" . $e->getMessage());
         }
     }
 }
