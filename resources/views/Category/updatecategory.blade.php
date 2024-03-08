@@ -19,14 +19,14 @@
             @csrf
             <div class="mb-3">
                 <label class="form-label">Category Name</label>
-                <input type="text" class="form-control rounded" name="categoryname" value={{$category->name}}>
+                <input type="text" class="form-control rounded" name="categoryname" value={{ old('categoryname',$category->name)}}>
             </div>
             @error('categoryname')
             <span class="text-danger">{{ $message }}</span><br><br>
             @enderror
             <div class="mb-3">
                 <label class="form-label">Category Description</label>
-                <input type="text" class="form-control rounded" name="categorydescription" value={{$category->description}}>
+                <input type="text" class="form-control rounded" name="categorydescription" value="{{ old('categorydescription', $category->description) }}">
             </div>
             @error('categorydescription')
             <span class="text-danger ">{{ $message }}</span><br><br>
