@@ -19,10 +19,10 @@ return new class extends Migration
             $table->boolean('is_individual');
             $table->integer('available_seats');
             $table->unsignedBigInteger('tournment_id');
-            $table->unsignedBigInteger('event_types_id');
+            // $table->unsignedBigInteger('event_types_id');
             $table->timestamps();
             $table->foreign('tournment_id')->references('id')->on('tournments')->onDelete('cascade');
-            $table->foreign('event_types_id')->references('id')->on('event_types')->onDelete('cascade');
+            // $table->foreign('event_types_id')->references('id')->on('event_types')->onDelete('cascade');
         });
     }
 

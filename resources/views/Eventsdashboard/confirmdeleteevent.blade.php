@@ -11,12 +11,12 @@
     <div class="container text-center">
         <h1 class="text-center mt-5">Confirm Delete</h1>
         <p class="text-center">Are you sure to delete this category?</p>
-        <form action="/deletecategory/{{$id}}" method="post" class="d-inline">
+        <form action="/eventdelete/{{$id}}" method="post" class="d-inline">
             @csrf
             <input type="submit" value="Yes" class="btn btn-danger">
             @method('DELETE')
         </form>
-        <a href="/categorydashboard" class="btn btn-success m-auto">No</a>
+        <a href="/eventdashboard" class="btn btn-success m-auto">No</a>
     </div>
 </body>
 </html>

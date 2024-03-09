@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Tournment_CategoryController;
 use App\Http\Controllers\TournmentCategoryController;
@@ -61,6 +62,15 @@ Route::middleware('auth')->group(function () {
         Route::get('/profile','edit')->name('profile.edit');
         Route::patch('/profile', 'update')->name('profile.update');
         Route::delete('/profile', 'destroy')->name('profile.destroy');
+    });
+    Route::controller(EventController::class)->group(function(){
+        Route::get('/eventdashboard','getdata');
+        Route::get('/addevent','getaddform');
+        Route::post('/addevent','addevent');
+        Route::get('/updateeventform/{id}','showupdateform');
+        Route::put('/updateevent/{id}','updateevent');
+        Route::get('/confirmeventdelete/{id}','confirmeventdelete');
+        Route::delete('/eventdelete/{id}','deleteevent');
     });
 });
 
