@@ -1,1 +1,1 @@
-<a href="/"><h1 class="text-justify">Unversity Tournment System</h1></a>
+<a href="/"><h1 class="text-justify text-white">Unversity Tournment System</h1></a>
