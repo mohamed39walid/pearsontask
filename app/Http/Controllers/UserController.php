@@ -34,9 +34,11 @@ class UserController extends Controller
     public function addingusers(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|min:0|max:255',
+            'name' => 'required|string|min:1|max:255|regex:/^[^0-9]+$/',
             'email' => 'required|email|unique:users|max:255',
             'password' => 'required|string|min:8|max:255',
+        ],[
+            'name.regex' => 'The :attribute field should not contain numeric values.',
         ]);
         User::create(
             [
@@ -62,7 +64,9 @@ class UserController extends Controller
     public function updateuserdata(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|string|min:0|max:255',
+            'name' => 'required|string|min:1|max:255|regex:/^[^0-9]+$/',
+        ], [
+            'name.regex' => 'The :attribute field should not contain numeric values.',
         ]);
         $user_update = User::findorFail($id);
         $user_update->update([

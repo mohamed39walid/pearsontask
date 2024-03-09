@@ -20,8 +20,11 @@ class TournmentCategoryController extends Controller
     public function addcategory(Request $request)
     {
         $request->validate([
-            'categoryname' => 'required|string|min:0|max:255',
-            'categorydescription' => 'required|string|min:0|max:255',
+            'categoryname' => 'required|string|min:1|max:255|regex:/^[^0-9]+$/',
+            'categorydescription' => 'required|string|min:1|max:255|regex:/^[^0-9]+$/',
+        ], [
+            'categoryname.regex' => 'The :attribute field should not contain numeric values.',
+            'categorydescription.regex' => 'The :attribute field should not contain numeric values.',
         ]);
         TournmentCategory::create(
             [
@@ -38,6 +41,14 @@ class TournmentCategoryController extends Controller
     }
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'categoryname' => 'required|string|min:1|max:255|regex:/^[^0-9]+$/',
+            'categorydescription' => 'required|string|min:1|max:255|regex:/^[^0-9]+$/',
+        ], [
+            'categoryname.regex' => 'The :attribute field should not contain numeric values.',
+            'categorydescription.regex' => 'The :attribute field should not contain numeric values.',
+        ]);
+        
         $tour_category = TournmentCategory::findorFail($id);
         $tour_category->update([
             'name' => $request->categoryname,

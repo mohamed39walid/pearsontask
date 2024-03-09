@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->string('event_name');
             $table->string('seats_number');
             $table->text('description');
             $table->boolean('is_individual');
