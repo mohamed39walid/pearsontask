@@ -64,7 +64,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('/profile', 'destroy')->name('profile.destroy');
     });
     Route::controller(EventController::class)->group(function(){
-        Route::get('/eventdashboard','getdata');
+        Route::get('/eventdashboard','getdata')->name('event.eventdashboard');
         Route::get('/addevent','getaddform');
         Route::post('/addevent','addevent');
         Route::get('/updateeventform/{id}','showupdateform');
