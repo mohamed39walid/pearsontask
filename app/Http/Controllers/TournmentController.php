@@ -52,7 +52,6 @@ class TournmentController extends Controller
             'tournmentname.regex' => 'The :attribute field should not contain numeric values.',
             'tournmentdescription.regex' => 'The :attribute field should not contain numeric values.',
         ]);
-        
         $updatedata = Tournment::findorFail($id);
         $updatedata->update([
             'name'=>$request->tournmentname,
@@ -68,5 +67,9 @@ class TournmentController extends Controller
     public function deletetournment($id){
         Tournment::findorFail($id)->delete();
         return redirect('/tournmentdashboard');
+    }
+    public function showuserpage(){
+        $tournments = Tournment::all();
+        return view('userpage')->with('tournments',$tournments);
     }
 }

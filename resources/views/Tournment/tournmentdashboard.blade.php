@@ -12,6 +12,7 @@
 </head>
 <body class="bg-dark text-white">
     @include('layouts.navigation')
+
     <h1 class="text-center m-5" style="font-size: 50px">Tournment Dashboard</h1>
     <div class="container">
         <table class="table custom-table">

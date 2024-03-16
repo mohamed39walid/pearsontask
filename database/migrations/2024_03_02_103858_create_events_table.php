@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('event_name');
             $table->string('seats_number');
             $table->text('description');
-            $table->boolean('is_individual');
+            $table->string('is_individual');
             $table->integer('available_seats');
             $table->unsignedBigInteger('tournment_id');
             // $table->unsignedBigInteger('event_types_id');

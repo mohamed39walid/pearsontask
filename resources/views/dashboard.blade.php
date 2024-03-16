@@ -14,4 +14,9 @@
             </div>
         </div>
     </div>
+    @if(Auth()->user() && (Auth()->user()->role == 'admin' || Auth()->user()->role == 'superadmin'))
+        <a class="btn btn-primary" href="/categorydashboard">Category Dashboard</a>
+        <a class="btn btn-primary" href="/categorydashboard">Category Dashboard</a>
+
+    @endif
 </x-app-layout>

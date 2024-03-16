@@ -41,7 +41,7 @@
                 </a>
             @endif
 
-            <x-primary-button class="ms-3">
+            <x-primary-button class="mt-2">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>

@@ -12,6 +12,7 @@
 </head>
 
 <body class="bg-dark text-white">
+    
     <div class="container">
         @include('layouts.navigation')
         <h1 class="text-center m-4" style="font-size: 50px">Update User</h1>

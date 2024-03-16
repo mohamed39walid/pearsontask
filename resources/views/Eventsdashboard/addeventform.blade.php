@@ -31,13 +31,13 @@
             <span class="text-danger ">{{ $message }}</span><br><br>
             @enderror
             <div class="mb-3">
-                <label class="form-label">Is Individual</label>
+                <label class="form-label">Event Situation</label>
                 <select class="text-dark form-select rounded" name="isindividual">
-                    <option value={{true}}>
-                        Yes
+                    <option value="individual">
+                        Individual
                     </option>
-                    <option value=2>
-                        No
+                    <option value="team">
+                        Team
                     </option>
                 </select>
             </div>

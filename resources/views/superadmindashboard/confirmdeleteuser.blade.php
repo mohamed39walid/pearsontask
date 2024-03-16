@@ -8,6 +8,7 @@
     <title>Confirm Delete</title>
 </head>
 <body class="bg-dark text-white">
+    
     <div class="container text-center">
         <h1 class="text-center mt-5">Confirm Delete</h1>
         <p class="text-center">Are you sure to delete this category?</p>

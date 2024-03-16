@@ -11,27 +11,6 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('categorydashboard.show')" :active="request()->routeIs('categorydashboard.show')">
-                        {{ __('Category Dashboard') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('user.getusers')" :active="request()->routeIs('user.getusers')">
-                        {{ __('User Dashboard(only for superadmins)') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('tournment.showtournments')" :active="request()->routeIs('tournment.showtournments')">
-                        {{ __('Tournment Dashboard') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('event.eventdashboard')" :active="request()->routeIs('event.eventdashboard')">
-                        {{ __('Events Dashboard') }}
-                    </x-nav-link>
-                </div>
-            </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6 bg-dark">
