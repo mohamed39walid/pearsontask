@@ -16,7 +16,6 @@ class ScoreController extends Controller
     }
     public function showevents(Request $request,$id){
         $events = Event::all();
-        // return $request;
         $selectvalue = $request->situationselect;
         return view('showevent')->with('selectvalue',$selectvalue)->with('id',$id)->with('events',$events);
     }
@@ -40,5 +39,9 @@ class ScoreController extends Controller
             return view('question')->with('questions', $questions)->with('id',$id)->with('selectvalue',$selectvalue)->with('sco_id',$sco_id); // Corrected with() method call
         }
     }
-    
+    public function showuserscore(){
+        $user_id = Auth()->user()->id;
+        $oldscore = Score::where('user_id',$user_id)->select('score')->get();
+        return view('score')->with('oldscore',$oldscore);
+    }
 }

@@ -30,6 +30,6 @@ class QuestionController extends Controller
             "user_id"=>$id,
             "score"=>$oldscore,
         ]);
-        return view('score')->with('score',$score);
+        return view('score')->with('oldscore',$oldscore);
     }
 }

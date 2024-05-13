@@ -52,8 +52,8 @@
 <body>
     <div class="score-container">
         <h1>Your Score</h1>
-        <div class="score">{{$score}}</div>
-        <a href="/home" class="btn-link">Continue</a>
+        <div class="score">{{$oldscore}}</div>
+        <a href="/home" class="btn-link">Back</a>
     </div>
 </body>
 </html>

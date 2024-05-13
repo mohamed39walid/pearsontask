@@ -31,6 +31,7 @@
                         <h5 class="card-title m-3">Tournment Name: {{$tournment->name}}</h5>
                   <p class="card-text m-3">Tournment Description: {{$tournment->description}}</p>
                   <a href="/join_tournment/{{$tournment->id}}" class="btn btn-success m-auto text-center m-3 items-center">Join a tournment</a>
+                  <a href="/yourscore" class="btn btn-success m-auto text-center mt-3 items-center">Show your score</a>
                 </div>
             </div>
             @endforeach

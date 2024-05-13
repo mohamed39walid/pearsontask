@@ -82,6 +82,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/join_tournment/{id}', 'showsituationform')->name('score.showsituationform');
         Route::match(['get', 'post'], '/tournamentform/{id}', 'showevents')->name('score.showevents');
         Route::match(['get', 'post'], 'tournmentquestions/{id}/{selectvalue}', 'showquestions')->name('score.showquestions');
+        Route::get('/yourscore','showuserscore');
     });
     Route::controller(QuestionController::class)->group(function () {
         Route::put('/answerquestions/{id}/{sco_id}/{selectvalue}', 'submitAnswers');

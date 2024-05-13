@@ -11,7 +11,7 @@
     
     <div class="container text-center">
         <h1 class="text-center mt-5">Confirm Delete</h1>
-        <p class="text-center">Are you sure to delete this category?</p>
+        <p class="text-center">Are you sure to delete this user?</p>
         <form action="/deleteuser/{{$id}}" method="post" class="d-inline">
             @csrf
             <input type="submit" value="Yes" class="btn btn-danger">
