@@ -29,12 +29,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/home', [TournmentController::class, 'showuserpage']);
     Route::controller(TournmentCategoryController::class)->group(function () {
         Route::get('/categorydashboard', 'show')->name('categorydashboard.show');
